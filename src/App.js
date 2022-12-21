@@ -1,24 +1,19 @@
 import './App.css';
+import PictureTable from "./component/PictureTable";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Picture from "./component/Picture";
+import Update from "./component/Update";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<PictureTable/>}/>
+                <Route path="/picture/:id" element={<Picture/>}/>
+                <Route path="/picture/:id/update" element={<Update/>}/>
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default App;
