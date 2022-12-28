@@ -16,16 +16,23 @@ const Update = () => {
         }
     );
 
+
     useEffectOnce(async () => {
-        const response = await fetchGet(`/picture/${id}`);
-        if (response.status === 204) {
-            alert(`Sorry, picture "${id}" not found in the database.`);
-        }
-        setPicture(response)
-        setPictureUpdate({
-            ...pictureUpdate,
-            ...response,
-        })
+        fetchGet(`/picture/${id}`)
+            .then(response => {
+                setPicture(response)
+                setPictureUpdate({
+                    ...pictureUpdate,
+                    ...response,
+                })
+            })
+            .then(response => {
+                if (response.status === 204) {
+                    alert(`Sorry, picture "${id}" not found in the database.`);
+                }
+            })
+
+
     })
 
 
@@ -36,9 +43,11 @@ const Update = () => {
         })
     }
 
+
     function handleResetClick() {
         resetInput();
     }
+
 
     const resetInput = () => {
         setPictureUpdate({
@@ -46,13 +55,18 @@ const Update = () => {
         })
     }
 
+
     async function handleUpdateClick() {
         const response = await fetchPut(`/picture/${id}/update`, pictureUpdate);
         if (response.status === 204) {
             alert(`Sorry, picture "${id}" not found in the database.`);
             resetInput();
         }
+        if(response.status === 202) {
+            alert(`Picture ${id} updated`)
+        }
     }
+
 
     return picture && (
         <div>

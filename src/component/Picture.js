@@ -9,7 +9,7 @@ const Picture = () =>{
     const [picture, setPicture] = useState(null);
 
     useEffectOnce(() => {
-        fetchGet(`/picture/${id}`).then(data => setPicture(data))
+        fetchGet(`/picture/${id}`).then(data => setPicture(data));
     })
 
     return picture && (<div>
