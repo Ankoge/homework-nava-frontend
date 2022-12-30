@@ -1,6 +1,6 @@
 # Nava Homework Frontend
 
-Frontend part of a picture viewing api. 
+Frontend part of a picture viewing api. Here is the [backend](https://github.com/Ankoge/homevork-nava-backend).
 
 ## Languages and Tools
 <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a>
