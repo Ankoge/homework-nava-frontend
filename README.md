@@ -10,11 +10,15 @@ Frontend part of a picture viewing api.
 Install node.js v18.12.1. 
 [Install guide](https://techviewleo.com/how-to-install-node-js-18-lts-on-ubuntu/) for node.js.
 
-Install two packages
-#### `npm install axios`
-#### `npm install react-router-dom`
+Install dependencies:
+```shell
+$ npm ci
+```
 
-And run
-#### `npm start`
+
+And run:
+```shell
+$ npm start
+```
 It will start at the 3000 port
 [localhost://3000](http://localhost:3000/)
